@@ -11,193 +11,104 @@
 
 using namespace std;
 
-struct Address{
-	int	houseNum;
-	string	streetName,
-		cityName;
-};
+class Student{
 
-struct Subject{
-	string	subName;
-	int	mark;
-	char	grade;
-};
+private:
+	static const int count = 1;
 
-struct Student{
-	int	stuNum,
-		subjCount = 7;
-	string	name;
-	char	sex;
-	Subject	subj[7];
-	Address	addr;
-};
-
-/**
-
-*/
-char GetGrade(Student student[], int counter, int c){
-
-	bool T = student[counter-1].subj[c-1].mark >= 90,
-	     A = student[counter-1].subj[c-1].mark >= 80,
-	     B = student[counter-1].subj[c-1].mark >= 70,
-	     C = student[counter-1].subj[c-1].mark >= 60,
-	     F = student[counter-1].subj[c-1].mark <  60;
+	struct Address{
 		
-	if(T) return 'T';	
-	else if(A) return 'A';
-	else if(B) return 'B'; 		
-	else if(C) return 'C';
-	else if(F) return 'F';
+		int houseNum;
+		string streetName, cityName;
 
-}//end function: CheckGrade
-
-/**
-
-*/
-void GetSubjectDetails(Student student[], int counter, int c){
-
-	do{
-		cout << "Subject " << c << ": " << endl;
-		cout << "\tName:\t";
-		getline(cin, student[counter-1].subj[c-1].subName);
+	};
+	struct Subject{
 	
-		cout << "\tMark:\t";
-		cin >> student[counter-1].subj[c-1].mark;
+		string subjectName;
+		int mark;
+		char grade;
+
+	};
+	
+	int ID, subjCount = 7;
+	string name;
+	char sex;
+	Subject subj[7];
+	Address addr;
+	
+public:
+	int setID(){
+		cout << "Enter your student ID:\t";
+		cin >> ID;
 		cin.ignore();
-		
-		if ( student[counter-1].subj[c-1].mark < 0
-			|| student[counter-1].subj[c-1].mark > 100)
-			cout << "Invalid Entry, please enter a number from 0 to 100" << endl;
-		
-		else{
-			student[counter-1].subj[c-1].grade = GetGrade(student, counter, c);
+		return ID;
+	}
 
-			cout << "\tGrade:\t";
-			cout << GetGrade(student, counter, c) << endl;
-		}
-	}while(student[counter-1].subj[c-1].mark < 0
-		|| student[counter-1].subj[c-1].mark > 100);
-}//end function: GetSubjectDetails
-
-/**
-
-*/
-void GetStudentDetails(Student student[], int counter){
-
-	cout << "Enter the details for student number: " << counter << endl;
-	cout << "Student Number:\t";
-	cin >> student[counter-1].stuNum;
-
-	if (cin.fail()){
-		cout << "That isn't and integer!" << endl;
-		exit(0);
-	}	
-
-	cin.ignore();
-
-	cout << "Student Name:\t";
-	getline(cin, student[counter-1].name);
-
-	cout << "Sex:\t";
-	cin >> student[counter-1].sex;
-	cin.ignore();
-
-	for (int c = 1; c <= 7; c++){
-		GetSubjectDetails(student, counter, c);
-	}//end for
-
-	cout << "Address:" << endl;
-	cout << "\tHouse Number:\t";
-	cin >> student[counter-1].addr.houseNum;
-	cin.ignore();
-
-	cout << "\tStreet Name:\t";
-	getline(cin, student[counter-1].addr.streetName);
-
-	cout << "\tCity:\t";
-	getline(cin, student[counter-1].addr.cityName);
-	cout << endl;
-}//end function: GetStudentDetails
-
-/**
-
-*/
-int GetStudentCount(){
-
-	int	count;
-
-	cout << "How many students?" << endl;
-	cin >> count;
-	cout << endl;
-
-	return count;
-}
-
-/**
- 
-*/
-void WritetoFile(Student student[], int counter){
-
-	ofstream studentFile ("test.txt"/*, ios::app*/);
+	string setName(){
+		cout << "Enter your name:\t";
+		getline(cin, name);
+		return name;
+	}
 	
-	if (studentFile.is_open()){
+	char setSex(){
+		cout << "Enter you sex:\t";
+		cin >> sex;
+		cin.ignore();
+		return sex;
+	}
 
-		studentFile << "STUDENT NUMBER:\t" << student[counter-1].stuNum;
-		studentFile << "\tStudent Name:\t" << student[counter-1].name << endl;
-		studentFile << "Student Sex:\t" << student[counter-1].sex;
-		studentFile << "\tStudent Address:" << endl;
-		
-		studentFile << "\tHome Number:\t" << student[counter-1].addr.houseNum << endl;
-		studentFile << "\tStreet Name:\t" << student[counter-1].addr.streetName << endl;
+	char setGrade(int c){
+		do{
+			if (subj[c].mark >= 90){
+				return 'T';
+			} else if (subj[c].mark >= 80){
+				return 'A';
+			} else if (subj[c].mark >= 70){
+				return 'B';
+			} else if (subj[c].mark >= 60){
+				return 'C';
+			} else if (subj[c].mark < 60){
+				return 'F';
+			}
+		} while (subj[c].mark < 0 || subj[c].mark > 100);
+	}
 
-		studentFile << "\t\t\tCity:\t" << student[counter-1].addr.cityName << endl;
-		studentFile << "Subjects:" << endl;
+	void setSubject(){
 
-		for (int c = 1; c <= 7; c++){
-			studentFile << "\tSubject " << c << endl;
-			studentFile << "\t\tName:\t"
-				<< student[counter-1].subj[c-1].subName << endl;
-			studentFile << "\t\tMark:\t"
-				<< student[counter-1].subj[c-1].mark << endl;
-			studentFile << "\t\tGrade:\t"
-				<< student[counter-1].subj[c-1].grade << endl;
+		for (int c = 0; c < 7; c++){
+			
+			cout << "Subject " << c+1 << endl;
+			cout << "\tName:\t";
+			getline (cin, subj[c].subjectName);
+			
+//			do{
+				cout << subj[c].mark << "\t" << c << endl;
+				subj[c].mark = 0;
+
+				cout << "\tMark:\t";
+
+			//	cin >> subj[c].mark;
+			//	cin.ignore();			
+	
+//			} while (subj[c].mark < 0 || subj[c].mark > 100);
+			
+			subj[c].grade = setGrade(c);			
+			cout << "\tGrade:\t" << subj[c].grade << endl;
 		}
+	}
+	
+	Student(){
+		
+		setID();
+		setName();
+		setSubject();
 
-		studentFile << endl;
-		studentFile.close();
-	} else cout << "File couldn't open" << endl;
-}//end function: WritetoFile
+	}
 
-/*
- 
-*/
+};
+
 int main(){
 
-	int counter = 1,
-	    studentCount = GetStudentCount();
-	char ans;
-	Student student[studentCount];
-
-	while (counter <= studentCount){
-		if (studentCount > 0){
-			GetStudentDetails(student, counter);
-			
-			cout << "Write to file? {Y/N}\t";
-			cin >> ans;
-			cin.ignore();
-
-			switch (ans){
-				case 'y': case 'Y':
-					WritetoFile(student, counter);
-					cout << "written to file" << endl << endl;
-					break;
-				case 'n': case 'N': default:
-					break;
-			}
-			counter++;
-		} else{
-			cout << "No new information to be written." << endl << "Good bye";
-			break;
-		}
-	}//end while	
-}//end function: main
+	Student student;
+	
+}//end unction: main
