@@ -81,16 +81,17 @@ public:
 			cout << "\tName:\t";
 			getline (cin, subj[c].subjectName);
 			
-//			do{
+			//Keeps returning random numbers from aray index 2
+			do{
 				cout << subj[c].mark << "\t" << c << endl;
 				subj[c].mark = 0;
 
 				cout << "\tMark:\t";
 
-			//	cin >> subj[c].mark;
-			//	cin.ignore();			
+				cin >> subj[c].mark;
+				cin.ignore();			
 	
-//			} while (subj[c].mark < 0 || subj[c].mark > 100);
+			} while (subj[c].mark < 0 || subj[c].mark > 100);
 			
 			subj[c].grade = setGrade(c);			
 			cout << "\tGrade:\t" << subj[c].grade << endl;
