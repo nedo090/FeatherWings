@@ -58,7 +58,7 @@ public:
 	}
 
 	char setGrade(int c){
-		do{
+		
 			if (subj[c].mark >= 90){
 				return 'T';
 			} else if (subj[c].mark >= 80){
@@ -70,7 +70,6 @@ public:
 			} else if (subj[c].mark < 60){
 				return 'F';
 			}
-		} while (subj[c].mark < 0 || subj[c].mark > 100);
 	}
 
 	void setSubject(){
@@ -81,7 +80,9 @@ public:
 			cout << "\tName:\t";
 			getline (cin, subj[c].subjectName);
 			
-			//Keeps returning random numbers from aray index 2
+			//Keeps returning random numbers from 3rd array index
+			//I tried to combat this with subj[c].mark = 0, but
+			//that didn't work
 			do{
 				cout << subj[c].mark << "\t" << c << endl;
 				subj[c].mark = 0;
