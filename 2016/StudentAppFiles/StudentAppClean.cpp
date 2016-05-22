@@ -81,7 +81,7 @@ public:
 			cout << "\tName:\t";
 			getline (cin, subj[c].subjectName);
 			
-			//Keeps returning random numbers from aray index 2
+			//Keeps returning random numbers from 3rd array index
 			do{
 				cout << subj[c].mark << "\t" << c << endl;
 				subj[c].mark = 0;
