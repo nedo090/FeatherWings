@@ -2,7 +2,7 @@
 	StudentAppClean.cpp
 	takes student information and prints it to file
 	
-	@author Anthony Mans
+	@author ProfessorOptics
 	@version 1 (revised) 15 May 2016
 */
 #include <iostream>
@@ -81,11 +81,8 @@ public:
 			getline (cin, subj[c].subjectName);
 			
 			//Keeps returning random numbers from 3rd array index
-<<<<<<< HEAD
 			//I tried to combat this with subj[c].mark = 0, but
 			//that didn't work
-=======
->>>>>>> a202f808e1ddd9805d258f485802e3093d65bcc3
 			do{
 				cout << subj[c].mark << "\t" << c << endl;
 				subj[c].mark = 0;
