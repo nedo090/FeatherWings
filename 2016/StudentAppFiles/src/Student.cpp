@@ -14,7 +14,7 @@
  *	@param none
  *	@return none
  * */
-Student:: Student(){
+Student::Student(){
 	SetID();
 	SetName();
 	SetSex();
@@ -28,10 +28,10 @@ Student:: Student(){
  *	@param none
  *	@return none
  * */
-void Student:: SetID(){
-	cout << "Enter your student ID:\t";
-	cin >> ID;
-	cin.ignore();
+void Student::SetID(){
+	std::cout << "Enter your student ID:\t";
+	std::cin >> ID;
+	std::cin.ignore();
 }//end function: SetID
 
 /*
@@ -41,8 +41,8 @@ void Student:: SetID(){
  *	@return none
  * */
 void Student::SetName(){
-	cout << "Enter your name:\t";
-	getline(cin, name);
+	std::cout << "Enter your name:\t";
+	std::getline(std::cin, name);
 }//end function: SetName
 
 /*
@@ -52,9 +52,9 @@ void Student::SetName(){
  *	@return none
  * */
 void Student::SetSex(){
-	cout << "Enter your sex:\t\t";
-	cin >> sex;
-	cin.ignore();
+	std::cout << "Enter your sex:\t\t";
+	std::cin >> sex;
+	std::cin.ignore();
 }//end function: SetSex
 
 /*
@@ -89,24 +89,24 @@ void Student::SetSubject(){
 
 	for(int counter = 0; counter < ARRAY_SIZE(subj); counter++){
 
-		cout << "Subject " << counter + 1 << endl;
-		cout << "\tSubject Name:\t";
-		getline(cin, subj[counter].subjectName);
+		std::cout << "Subject " << counter + 1 << std::endl;
+		std::cout << "\tSubject Name:\t";
+		std::getline(std::cin, subj[counter].subjectName);
 
 		do{
-			cout << "\tMarks:\t\t";
-			cin >> subj[counter].mark;
-			cin.ignore();
+			std::cout << "\tMarks:\t\t";
+			std::cin >> subj[counter].mark;
+			std::cin.ignore();
 
 			isOutsideRange = subj[counter].mark < 0 || subj[counter].mark > 100;
 			
 			if(isOutsideRange){
-				cout << "Invalid Entry!" << endl;
+				std::cout << "Invalid Entry!" << std::endl;
 			}
 		} while(isOutsideRange);
 
 		subj[counter].grade = SetGrade(counter);
-		cout << "\tGrade:\t\t" << subj[counter].grade << endl;
+		std::cout << "\tGrade:\t\t" << subj[counter].grade << std::endl;
 	}
 
 }//end function: SetSubject
@@ -118,20 +118,20 @@ void Student::SetSubject(){
  *	@return none
  * */
 void Student::SetAddress(){
-	cout << "Address:" << endl;
-	cout << "\tHouse Number:\t";
-	cin >> addr.houseNum;
-	cin. ignore();
+	std::cout << "Address:" << std::endl;
+	std::cout << "\tHouse Number:\t";
+	std::cin >> addr.houseNum;
+	std::cin. ignore();
 
-	cout << "\tStreet Name:\t";
-	getline(cin, addr.streetName);
+	std::cout << "\tStreet Name:\t";
+	std::getline(std::cin, addr.streetName);
 
-	cout << "\tCity Name:\t";
-	getline(cin, addr.cityName);
+	std::cout << "\tCity Name:\t";
+	std::getline(std::cin, addr.cityName);
 
-	cout << "\tPostal Code:\t";
-	cin >> addr.postCode;
-	cin.ignore();
+	std::cout << "\tPostal Code:\t";
+	std::cin >> addr.postCode;
+	std::cin.ignore();
 	
 }//end function: SetAddress
 
@@ -151,7 +151,7 @@ int Student::getHouseNumber(){
  *	@param none
  *	@return string addr.streetName
  * */
-string Student::getStreetName(){
+std::string Student::getStreetName(){
 	return addr.streetName;
 }//end function: getStreetName
 
@@ -161,7 +161,7 @@ string Student::getStreetName(){
  *	@param none
  *	@return string addr.cityName
  * */
-string Student::getCityName(){
+std::string Student::getCityName(){
 	return addr.cityName;
 }//end function: getCityName
 
@@ -191,7 +191,7 @@ int Student::getID(){
  *	@param none
  *	@return string name
  * */
-string Student::getName(){
+std::string Student::getName(){
 	return name;
 }//end function: getName
 
@@ -211,7 +211,7 @@ char Student::getSex(){
  *	@param int counter
  *	@return string subj[counter].subjectName
  * */
-string Student::getSubjectName(int counter){
+std::string Student::getSubjectName(int counter){
 	return subj[counter].subjectName;
 }//end function: getSubjectName
 

@@ -17,9 +17,9 @@ int main(){
 	Student student;
 	char ans;
 
-	cout << "Do you want to write to file? (Y/N):";
-	cin >> ans;
-	cin.ignore();
+	std::cout << "Do you want to write to file? (Y/N):";
+	std::cin >> ans;
+	std::cin.ignore();
 
 	switch(ans){
 		case 'Y': case 'y': default:{

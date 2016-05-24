@@ -7,24 +7,22 @@
 #include <iostream>
 #include <fstream>
 
-using namespace std;
-
 class Student{
 protected:
 	
 	struct Address{
 		int houseNum, postCode;
-		string streetName, cityName;
+		std::string streetName, cityName;
 	};
 
 	struct Subject{
-		string subjectName;
+		std::string subjectName;
 		int mark;
 		char grade;
 	};
 
 	int ID;
-	string name;
+	std::string name;
 	char sex;
 	Subject subj[7];
 	Address addr;
@@ -39,15 +37,15 @@ public:
 	void SetAddress();
 
 	int getID();
-	string getName();
+	std::string getName();
 	char getSex();
-	string getSubjectName(int counter);
+	std::string getSubjectName(int counter);
 	int getMarks(int counter);
 	char getGrade(int counter);
 	int getArraySize();
 	int getHouseNumber();
-	string getStreetName();
-	string getCityName();
+	std::string getStreetName();
+	std::string getCityName();
 	int getPostCode();
 };
 #endif
