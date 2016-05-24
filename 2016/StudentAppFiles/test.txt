@@ -1,0 +1,36 @@
+Student Number:	7894561
+Student Name:	asduioyf
+Student Sex:	m
+Address:
+	House Number:	60
+	Street Name:	aasdoifu
+	City Name:	erjkl
+	Postal Code:	7896
+Subject 1
+	Name:	asoduf
+	Mark:	90
+	Grade:	T
+Subject 2
+	Name:	asdouf
+	Mark:	89
+	Grade:	A
+Subject 3
+	Name:	asdiofu
+	Mark:	78
+	Grade:	B
+Subject 4
+	Name:	asdiofu
+	Mark:	67
+	Grade:	C
+Subject 5
+	Name:	aosduf
+	Mark:	56
+	Grade:	F
+Subject 6
+	Name:	asdoifu
+	Mark:	45
+	Grade:	F
+Subject 7
+	Name:	sdlfu
+	Mark:	34
+	Grade:	F
