@@ -1,9 +1,8 @@
 /**
-	StudentAppClean.cpp
-	takes student information and prints it to file
-	
+	main.cpp
+		
 	@author ProfessorOptics
-	@version 1 (revised) 15 May 2016
+	@version 1 24 May 2016
 */
 #include "WriteFile.h"
 

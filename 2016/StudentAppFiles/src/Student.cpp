@@ -63,18 +63,18 @@ void Student::SetSex(){
  *	@param int
  *	@return char T, A, B, C or D
  * */
-char Student::SetGrade(int counter){
-	bool T = subj[counter].mark >= 90;
-	bool A = subj[counter].mark >= 80;
-	bool B = subj[counter].mark >= 70;
-	bool C = subj[counter].mark >= 60;
-	bool F = subj[counter].mark < 60;
+void Student::SetGrade(int counter){
+	bool T = getMarks(counter) >= 90;
+	bool A = getMarks(counter) >= 80;
+	bool B = getMarks(counter) >= 70;
+	bool C = getMarks(counter) >= 60;
+	bool F = getMarks(counter) < 60;
 
-	if(T) return 'T';
-	else if(A) return 'A';
-	else if(B) return 'B';
-	else if(C) return 'C';
-	else if(F) return 'F';
+	if(T) subj[counter].grade = 'T';
+	else if(A) subj[counter].grade = 'A';
+	else if(B) subj[counter].grade = 'B';
+	else if(C) subj[counter].grade = 'C';
+	else if(F) subj[counter].grade = 'F';
 		
 }//end function: SetGrade
 
@@ -90,27 +90,46 @@ void Student::SetSubject(){
 	for(int counter = 0; counter < ARRAY_SIZE(subj); counter++){
 
 		std::cout << "Subject " << counter + 1 << std::endl;
-		std::cout << "\tSubject Name:\t";
-		std::getline(std::cin, subj[counter].subjectName);
+		SetSubjName(counter);
 
 		do{
-			std::cout << "\tMarks:\t\t";
-			std::cin >> subj[counter].mark;
-			std::cin.ignore();
+			SetMark(counter);
 
-			isOutsideRange = subj[counter].mark < 0 || subj[counter].mark > 100;
+			isOutsideRange = getMarks(counter) < 0 || getMarks(counter) > 100;
 			
 			if(isOutsideRange){
-				std::cout << "Invalid Entry!" << std::endl;
+				std::cout << "Invalid Entry!\n";
 			}
 		} while(isOutsideRange);
 
-		subj[counter].grade = SetGrade(counter);
-		std::cout << "\tGrade:\t\t" << subj[counter].grade << std::endl;
+		SetGrade(counter);
+		std::cout << "\tGrade:\t\t" << getGrade(counter) << std::endl;
 	}
 
 }//end function: SetSubject
 
+/*
+ *	set subject name
+ *
+ *	@param int counter
+ *	@return none
+ * */
+void Student::SetSubjName(int counter){
+	std::cout << "\tSubject Name:\t";
+	std::getline(std::cin, subj[counter].subjectName);
+}//end function: SetSubjName
+
+/*
+ *	set subject marks
+ *
+ *	@param int counter
+ *	@return none
+ * */
+void Student::SetMark(int counter){
+	std::cout << "\tMarks:\t\t";
+	std::cin >> subj[counter].mark;
+	std::cin.ignore();
+}//end function: SetMark
 /*
  *	sets the address information based on user's input
  *
@@ -118,22 +137,58 @@ void Student::SetSubject(){
  *	@return none
  * */
 void Student::SetAddress(){
-	std::cout << "Address:" << std::endl;
+	std::cout << "Address:\n";
+	
+	SetHouseNum();
+	SetStreetName();
+	SetCityName();
+	SetPostCode();
+}//end function: SetAddress
+
+/*
+ *	sets the student's house number
+ *	@param none
+ *	@return void
+ * */
+void Student::SetHouseNum(){
 	std::cout << "\tHouse Number:\t";
 	std::cin >> addr.houseNum;
-	std::cin. ignore();
+	std::cin.ignore();
+}//end function: SetHouseNum
 
+/*
+ *	sets the students street name
+ *
+ *	@param none
+ *	@return void
+ * */
+void Student::SetStreetName(){
 	std::cout << "\tStreet Name:\t";
 	std::getline(std::cin, addr.streetName);
+}//end function: SetStreetName
 
+/*
+ *	sets student's city name
+ *
+ *	@param none
+ *	@return void
+ * */
+void Student::SetCityName(){
 	std::cout << "\tCity Name:\t";
 	std::getline(std::cin, addr.cityName);
+}//end function: SetCityName
 
+/*
+ *	sets student's postcode
+ *
+ *	@param none
+ *	@return void
+ * */
+void Student::SetPostCode(){
 	std::cout << "\tPostal Code:\t";
 	std::cin >> addr.postCode;
 	std::cin.ignore();
-	
-}//end function: SetAddress
+}//end function: SetPostCode
 
 /*
  *	gets the house number from address data structure

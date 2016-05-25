@@ -29,23 +29,16 @@ protected:
 
 public:
 	Student();
-	void SetID();
-	void SetName();
-	void SetSex();
-	char SetGrade(int counter);
-	void SetSubject();
-	void SetAddress();
+	void SetID(), SetName(), SetSex();
+	void SetAddress(), SetHouseNum(), SetStreetName(),
+		SetCityName(), SetPostCode(); 
+	void SetSubject(), SetSubjName(int counter),
+		SetMark(int counter), SetGrade(int counter);
 
-	int getID();
-	std::string getName();
-	char getSex();
-	std::string getSubjectName(int counter);
-	int getMarks(int counter);
-	char getGrade(int counter);
-	int getArraySize();
-	int getHouseNumber();
-	std::string getStreetName();
-	std::string getCityName();
-	int getPostCode();
+	int getID(), getMarks(int counter), getArraySize();
+	int getHouseNumber(), getPostCode();
+	std::string getName(), getSubjectName(int counter);
+	std::string getStreetName(), getCityName();
+	char getSex(), getGrade(int counter);
 };
 #endif
