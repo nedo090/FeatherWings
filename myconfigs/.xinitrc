@@ -1,0 +1,145 @@
+#!/bin/sh
+#
+# anrxc's X.org init file on Arch GNU/Linux
+
+
+# {{{ Environment settings
+errorlog="${HOME}/.xerrors"
+
+# Export KDE styles to QT
+export EDITOR=nvim
+export VISUAL=nvim
+export BROWSER=qutebrowser
+export TERM=tmux
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export MYNVIMRCV=${HOME}/.config/nvim/config/visual.vimrc
+export LANG="en_US.UTF-8"
+
+ibus-daemon -drx
+# }}}
+
+
+# {{{ Log settings
+#
+# Always start X11 with a clean log file
+if (cp /dev/null "${errorlog}"); then
+  chmod 600 "${errorlog}"
+  exec >"${errorlog}" 2>&1
+  break
+fi
+# }}}
+
+
+# {{{ Display settings
+#
+# Ignore reported display size and force DPI
+xrandr --dpi 96
+
+# Force LVDS as the primary screen
+#xrandr --output LVDS1 --primary
+
+# Brightness level
+xbacklight -set 00
+# }}}
+
+
+# {{{ Resource and keymap settings
+usermodmap="${HOME}/.Xmodmap"
+userresources="${HOME}/.Xresources"
+sysmodmap="/etc/X11/xinit/.Xmodmap"
+sysresources="/etc/X11/xinit/.Xresources"
+
+# Merge system and user resources and keymaps
+[[ -r "${sysresources}" ]]  && xrdb -merge "${sysresources}"
+[[ -r "${sysmodmap}" ]]     && xmodmap "${sysmodmap}"
+[[ -r "${userresources}" ]] && xrdb -merge "${userresources}"
+[[ -r "${usermodmap}" ]]    && xmodmap "${usermodmap}"
+# }}}
+
+
+# {{{ Input settings
+# 
+# Keyboard control, repeat delay and repeat rate
+xset r rate 200 30
+
+# Pointer control, acceleration and threshold
+#xset m 30/10 4
+
+# Pointer appearance
+#   - xcb does not support Xcursor yet
+#xsetroot -cursor_name left_ptr
+
+# Disable the touchpad while typing
+#syndaemon -k -i 2 -d &
+# }}}
+
+
+# {{{ Autostart settings
+#
+# Start the GnuPG agent but don't enable OpenSSH agent emulation
+#if (pgrep -u "${USER}" gpg-agent); then
+#  eval `cat ${gnupglog}`
+#  eval `cut -d= -f1 ${gnupglog} | xargs echo export`
+#else
+#  #eval `gpg-agent --enable-ssh-support --daemon`
+#  eval  `gpg-agent --daemon`
+#fi
+
+# Start the SSH-Agent to replace broken GnuPG agent
+#if (pgrep -u "${USER}" ssh-agent); then
+#  eval `cat ${HOME}/.keychain/${HOSTNAME}-sh`
+#else
+#  eval `ssh-agent`
+#  (sleep 15 && keychain -q --timeout 480 --agents ssh id_rsa_sysphere id_rsa_heroin)&
+#fi
+
+# Start the GNU Emacs daemon
+#[[ ! -r "/tmp/emacs${UID}/server" ]] && emacs --daemon &
+#   - disable the socket logic, Gtk+ bug crashes emacs, leaves the socket
+#   - http://bugzilla.gnome.org/show_bug.cgi?id=85715
+#emacs --daemon &
+
+# Xwrits reminds you to take wrist breaks and avoid RSI
+#xwrits typetime=45 clock breakclock top ready-picture="${HOME}/.xwrits/ready.gif" \
+ # rest-picture="${HOME}/.xwrits/rest.gif" warning-picture="${HOME}/.xwrits/warning.gif" &
+
+# Open a terminal emulator on the first tag
+#   - resume the old screen session or start a new one
+# urxvt -e screen -l -UDRS term &
+# Play a startup sound
+play -v 0.2 "${HOME}/Sounds/chargingpenguin.ogg" &
+# }}}
+
+#run mpd and have it paused
+mpd &
+mpc pause &
+
+#run compton in background
+compton -b &
+
+numlockx &
+
+terminator -c "alpine" -e alpine &
+qutebrowser &
+terminator -c "startup" &
+#autorun
+# {{{ Window manager selection
+case "$WM" in
+  failsafe|twm)
+    exec twm
+    ;;
+  fvwm)
+    exec fvwm2
+    ;;
+  kde)
+    exec startkde
+    ;;
+  debug)
+    exec valgrind -v "$1"
+    ;;
+  *)
+    exec awesome
+    ;;
+esac
+# }}}
