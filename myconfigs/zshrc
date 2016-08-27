@@ -85,29 +85,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #aliases
-alias qute="qutebrowser"
-alias ez="nvim ~/.zshrc"
-alias ea="nvim ~/.config/awesome/rc.lua"
-alias ex="nvim ~/.xinitrc"
-alias home="$HOME"
-alias tmux="tmux -2"
-
-#pacman
-alias pacmin="sudo pacman -S ${}"
-alias pacsearch="pacman -Ss ${}"
-alias pacmun="sudo pacman -Rns ${}"
-
-#yaourt
-alias yaoin="yaourt -S ${}"
-alias yaoun="yaourt -Rsn ${}"
-alias yaous="yaourt -Ss ${}"
-
-#system
-alias update="system_update"
-alias ls="ls --color=auto"
-alias dir=ls
-
-#git
-alias gadd="git add -A"
-alias gcommit="git commit -m ${}"
-alias gpush="git push origin -u ${}"
+source "$HOME/.zsh_aliases"

@@ -23,5 +23,8 @@ set tabstop=4				 "number of visual spaces per tab
 set softtabstop=4			 "number of space in tab when editing
 set expandtab 				 "tabs are spaces
 " }}}
+"Clipboard{{{
+set clipboard=unnamed
 
+"}}}
 " vim:foldmethod=marker:foldlevel=0

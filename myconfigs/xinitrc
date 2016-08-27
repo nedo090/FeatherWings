@@ -123,6 +123,7 @@ numlockx &
 terminator -c "alpine" -e alpine &
 qutebrowser &
 terminator -c "startup" &
+
 #autorun
 # {{{ Window manager selection
 case "$WM" in
