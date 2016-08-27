@@ -91,3 +91,17 @@ alias ea="nvim ~/.config/awesome/rc.lua"
 alias ex="nvim ~/.xinitrc"
 alias home="$HOME"
 alias tmux="tmux -2"
+
+#pacman
+alias pacmin="sudo pacman -S ${}"
+alias pacsearch="pacman -Ss ${}"
+alias pacmun="sudo pacman -Rns ${}"
+
+#yaourt
+alias yaoin="yaourt -S ${}"
+alias yaoun="yaourt -Rsn ${}"
+alias yaous="yaourt -Ss ${}"
+
+#system
+alias update="system_update"
+alias ls="ls --color=auto"
