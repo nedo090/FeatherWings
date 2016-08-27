@@ -105,3 +105,9 @@ alias yaous="yaourt -Ss ${}"
 #system
 alias update="system_update"
 alias ls="ls --color=auto"
+alias dir=ls
+
+#git
+alias gadd="git add -A"
+alias gcommit="git commit -m ${}"
+alias gpush="git push origin -u ${}"
