@@ -1,5 +1,6 @@
 #config files{{{
 alias ez="nvim ~/.zshrc"
+alias eza="nvim ~/.zsh_aliases"
 alias ea="nvim ~/.config/awesome/rc.lua"
 alias ex="nvim ~/.xinitrc"
 alias en="nvim ~/.config/nvim/init.vim"
@@ -30,5 +31,7 @@ alias gadd="git add -A"
 alias gcommit="git commit -m ${}"
 alias gpush="git push origin -u ${}"
 #}}}
-
+#Terminal{{{
+alias clear="clear && screenfetch"
+#}}}
 # vim:foldmethod=marker:foldlevel=0

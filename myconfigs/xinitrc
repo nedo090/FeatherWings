@@ -10,7 +10,6 @@ errorlog="${HOME}/.xerrors"
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=qutebrowser
-export TERM=tmux
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export MYNVIMRCV=${HOME}/.config/nvim/config/visual.vimrc
@@ -113,16 +112,20 @@ play -v 0.2 "${HOME}/Sounds/chargingpenguin.ogg" &
 
 #run mpd and have it paused
 mpd &
-mpc pause &
-
+#mpc pause &
 #run compton in background
-compton -b &
+#compton -b -config "$HOME/.config/compton.conf" &
 
 numlockx &
 
-terminator -c "alpine" -e alpine &
+urxvtd -q -o -f &
+
+sleep 3 
+urxvtc -name "alpine" -e alpine &
+#urxvtc -name "twitter" -e turses &
+urxvtc -name "startup" &
+
 qutebrowser &
-terminator -c "startup" &
 
 #autorun
 # {{{ Window manager selection
