@@ -1,2 +1,0 @@
-source "$HOME/.zsh_aliases"
-[ -z "$DISPLAY" -a "$(fgconsole)" -eq 1 ] && exec startx
