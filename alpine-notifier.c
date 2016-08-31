@@ -22,7 +22,7 @@ int main(void)
                         s[num] = '\0';
                         sprintf(cmd, "notify-send -t 5000 ' :' '%s'", s);
                         
-                        system("play -qv .25 /home/professoroptics/Sounds/Incoming.wav &");
+                        system("play .25 /home/professoroptics/Sounds/Incoming.wav &");
                         system(cmd);
                 }
         } while (num > 0);
