@@ -1,0 +1,31 @@
+#dark                        light
+export color0='080000';     export color8='23262b';           #black; dark grey
+export color1='803000';     export color9='d09020';           #dark red; red
+export color2='402810';     export color10='b08050';          #dark green; green
+export color3='322507';     export color11='e7ab09';          #dark yellow; yellow
+export color4='1b2638';     export color12='386888';          #dark blue; blue
+export color5='d08010';     export color13='f0a800';          #dark magenta; magenta
+export color6='68a8c8';     export color14='73abca';          #dark cyan; cyan
+export color7='282828';     export color15='f8e830';          #grey; white
+
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P0$color0"
+    echo -en "\e]P1$color1"
+    echo -en "\e]P2$color2"
+    echo -en "\e]P3$color3"
+    echo -en "\e]P4$color4"
+    echo -en "\e]P5$color5"
+    echo -en "\e]P6$color6"
+    echo -en "\e]P7$color7"
+    echo -en "\e]P8$color8"
+    echo -en "\e]P9$color9"
+    echo -en "\e]PA$color10"
+    echo -en "\e]PB$color11"
+    echo -en "\e]PC$color12"
+    echo -en "\e]PD$color13"
+    echo -en "\e]PE$color14"
+    echo -en "\e]PF$color15"
+
+fi
+
+# vim: set filetype=sh:

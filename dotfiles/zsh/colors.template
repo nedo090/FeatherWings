@@ -1,0 +1,8 @@
+export color0='#';     export color8='#';           #black; dark grey
+export color1='#';     export color9='#';           #dark red; red
+export color2='#';     export color10='#';          #dark green; green
+export color3='#';     export color11='#';          #dark yellow; yellow
+export color4='#';     export color12='#';          #dark blue; blue
+export color5='#';     export color13='#';          #dark magenta; magenta
+export color6='#';     export color14='#';          #dark cyan; cyan
+export color7='#';     export color15='#';          #grey; white

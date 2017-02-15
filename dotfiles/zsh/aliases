@@ -1,0 +1,24 @@
+# vim: set filetype=sh :
+
+alias q=exit
+
+if [ "$TERM" = "xterm-256color" ]; then
+    alias q='tmux detach'
+fi
+
+alias new="tmux new -s ${}"
+alias attach="tmux attach -t ${}"
+alias c=clear
+alias su="su ${} -"
+alias dir=ls
+alias gc="git clone ${}"
+alias ga="git add"
+alias gcom="git commit -m ${}"
+alias gp="git push ${} -u ${}"
+alias gdr="cd $HOME/git"
+alias type="gtypist"
+alias install="sudo emerge -av ${}"
+alias search="eix ${}"
+alias uinstall="sudo emerge -c ${}"
+alias qutebrowser="qutebrowser --backeng webengine"
+alias plr="ncmpcpp"
