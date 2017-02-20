@@ -4,6 +4,7 @@ alias q=exit
 
 if [ "$TERM" = "xterm-256color" ]; then
     alias q='tmux detach'
+    alias qq='exit'
 fi
 
 alias new="tmux new -s ${}"
@@ -19,6 +20,11 @@ alias gdr="cd $HOME/git"
 alias type="gtypist"
 alias install="sudo emerge -av ${}"
 alias search="eix ${}"
-alias uinstall="sudo emerge -c ${}"
-alias qutebrowser="qutebrowser --backeng webengine"
+alias uinstall="sudo emerge -ac ${}"
+alias qutebrowser="qutebrowser --backend webengine"
 alias plr="ncmpcpp"
+alias compile="g++ -std=c++11 -o ${1} ${2}"
+alias screenkey="$HOME/git/screenkey/screenkey -f Monospace -s medium --bg-color '#080000' --font-color '#f8e830' --mods-mode emacs --opacity 0.45 --no-detach --no-systray"
+alias screencast="screenkey & ffmpeg -v fatal -f x11grab -s 1920x1080 -i :0 -r 24 ${}"
+alias kill="kill -s QUIT ${}"
+alias mpv="DRI_PRIME=1 mpv ${}"

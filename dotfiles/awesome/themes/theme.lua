@@ -39,12 +39,13 @@ theme.border        = {
 
 theme.taglist       = {
     bg      = {
-        focus       = theme.fg.normal,
+        focus       = '#' .. colors.fifteen,
         urgent      = '#' .. colors.one,
-        occupied    = '#' .. colors.four,
-        empty       = '#' .. colors.four,
+        --occupied    = '#' .. colors.four,
+        --empty       = '#' .. colors.four,
     },
     fg      = {
+        normal      = '#' .. colors.fifteen,
         focus       = theme.bg.normal,
         urgent      = '#' .. colors.eleven,
     },
@@ -66,36 +67,41 @@ theme.tasklist      = {
     disable_icon = 'true',
     align = 'center',
 }
+
 theme.mpd           = {
     ctl     = {
-        bg      = '#' .. colors.thirteen .. '80',
-        fg      = '',
+        bg      = '#' .. colors.thirteen .. '00',
+        fg      = '#' .. colors.four,
         border  = '',
     },
+
     now_playing = {
-        bg = '#' .. colors.two .. '80',
+        bg = '#' .. colors.one .. "80",
         fg = '',
         border = '',
+    },
+
+    icons   = {
+        play = '  ',
+        pause = '  ',
+        stop = '  ',
+        prev = '  ',
+        nxt = '  ',
+        plr = '  ',
     }
 }
+
 theme.prompt        = {
     bg      = '#' .. colors.four,
     fg      = '#' .. colors.twelve,
     border  = '#' .. colors.twelve,
 }
+
 theme.tray          = {
     bg      = '#' .. colors.two .. 'b3',
     fg      = '#',
     border  = '#' .. colors.ten,
 }
-
-
-
-
-
-
-
-
 
 theme.bg_normal         		= theme.bg.normal
 theme.fg_normal         		= theme.fg.normal
