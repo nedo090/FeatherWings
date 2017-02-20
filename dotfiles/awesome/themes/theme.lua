@@ -54,8 +54,8 @@ theme.taglist       = {
 
 theme.tasklist      = {
     bg      = {
-        normal      = theme.border.normal,
-        focus       = theme.border.focus,
+        normal      = "#" .. colors.twelve .. "80",
+        focus       = "#" .. colors.eleven .. "B3",
         urgent      = theme.taglist.bg.urgent,
     },
     fg      = {
