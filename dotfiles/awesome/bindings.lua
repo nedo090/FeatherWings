@@ -93,7 +93,7 @@ function bindings.global()
         s.prompt.wibox.visible = true
 
         awful.prompt.run{
-            prompt = s.prompt.widget.prompt,
+            prompt = " Run: ",
             textbox = s.prompt.widget.widget,
             completion_callback = awful.completion.shell,
             exe_callback =  function(...)
@@ -103,7 +103,6 @@ function bindings.global()
                 s.prompt.wibox.visible = false
             end,
             history_path = awful.util.get_cache_dir() .. '/history',
-            fg_cursor = beautiful.prompt.bg,
         }
     end,
     {description = "run prompt", group = "launcher"}),

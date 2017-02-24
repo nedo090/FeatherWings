@@ -1,6 +1,4 @@
---TODO add media widgets
 --TODO add tray bar
-
 local awful = require('awful')
 local wibox = require('wibox')
 local beautiful = require('beautiful')
@@ -15,16 +13,16 @@ function widgets.setup()
         s.widgets = widgets
 
         -- Define the wiboxes
-        s.widgets.tags.wibox = wibox { height = 25, width = 160, visible = true, bg = '#00', fg=beautiful.taglist.fg.normal}
-        s.widgets.prompt.wibox = wibox { height = 25, width = 512, visible = false, ontop = true, bg = beautiful.prompt.bg, fg = beautiful.prompt.fg }
-        s.widgets.tasklist.wibox = wibox { height = 25, width = 1280, visible = true, bg = '#00' }
-        s.widgets.mpd.ctl.wibox = wibox { height = 25, width = 128, visible = true, bg = beautiful.mpd.ctl.bg, fg = beautiful.mpd.ctl.fg }
-        s.widgets.mpd.now_playing.wibox = wibox { height = 25, width = 512, visible = false, bg = beautiful.mpd.now_playing.bg}
+        s.widgets.tags.wibox = wibox { height = 25, width = 160, visible = true, bg = '#00', fg=beautiful.taglist.fg.normal, type = 'dock', }
+        s.widgets.prompt.wibox = wibox { height = 25, width = 512, visible = false, ontop = true, bg = beautiful.prompt.bg, fg = beautiful.prompt.fg, type = 'dock', shape = gears.shape.hexagon}
+        s.widgets.tasklist.wibox = wibox { height = 25, width = 1280, visible = true, bg = '#00', type = 'dock'}
+        s.widgets.mpd.ctl.wibox = wibox { height = 25, width = 116, visible = true, bg = beautiful.mpd.ctl.bg, fg = beautiful.mpd.ctl.fg, type = 'dock', }
+        s.widgets.mpd.now_playing.wibox = wibox { height = 25, width = 640, visible = false, ontop = true, bg = beautiful.mpd.now_playing.bg, fg = beautiful.mpd.now_playing.fg,  type = 'dock', shape = gears.shape.hexagon}
 
         -- Define the widgets
-        s.widgets.tags.widget = awful.widget.taglist(s, awful.widget.taglist.filter.all, bindings.taglist())
+        s.widgets.tags.widget = awful.widget.taglist(s, awful.widget.taglist.filter.all, bindings.taglist(), {})
         s.widgets.prompt.widget = awful.widget.prompt()
-        s.widgets.tasklist.widget = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, bindings.tasklist())
+        s.widgets.tasklist.widget = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, bindings.tasklist(), { shape = gears.shape.hexagon })
         s.widgets.mpd.ctl.play = wibox.widget.textbox(beautiful.mpd.icons.play)
         s.widgets.mpd.ctl.stop = wibox.widget.textbox(beautiful.mpd.icons.stop)
         s.widgets.mpd.ctl.prev = wibox.widget.textbox(beautiful.mpd.icons.prev)
@@ -93,8 +91,12 @@ function widgets.setup()
 
         -- Bring the widgets together
         s.widgets.tags.wibox:setup{
-            layout  = wibox.layout.fixed.horizontal,
-            s.widgets.tags.widget,
+            layout  = wibox.layout.align.horizontal,
+            nil,
+            {
+                layout  = wibox.layout.fixed.horizontal,
+                s.widgets.tags.widget,
+            }
         }
         s.widgets.prompt.wibox:setup{
             layout  = wibox.layout.fixed.horizontal,
@@ -109,11 +111,15 @@ function widgets.setup()
             layout  = wibox.layout.fixed.horizontal,
             {
                 layout  = wibox.layout.fixed.horizontal,
-                s.widgets.mpd.ctl.plr,
-                s.widgets.mpd.ctl.play,
-                s.widgets.mpd.ctl.stop,
-                s.widgets.mpd.ctl.prev,
-                s.widgets.mpd.ctl.nxt,
+                nil,
+                {
+                    layout  = wibox.layout.fixed.horizontal,
+                    s.widgets.mpd.ctl.plr,
+                    s.widgets.mpd.ctl.play,
+                    s.widgets.mpd.ctl.stop,
+                    s.widgets.mpd.ctl.prev,
+                    s.widgets.mpd.ctl.nxt,
+                },
             },
         }
         s.widgets.mpd.now_playing.wibox:setup{

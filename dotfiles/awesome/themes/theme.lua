@@ -1,3 +1,4 @@
+local gears = require("gears")
 local colors 		= {
     zero             		= os.getenv('color0'),
     one              		= os.getenv('color1'),
@@ -39,28 +40,34 @@ theme.border        = {
 
 theme.taglist       = {
     bg      = {
-        focus       = '#' .. colors.fifteen,
+        focus       = '#' .. colors.fifteen .. "B0",
         urgent      = '#' .. colors.one,
         --occupied    = '#' .. colors.four,
         --empty       = '#' .. colors.four,
     },
     fg      = {
         normal      = '#' .. colors.fifteen,
-        focus       = theme.bg.normal,
+        focus       = '#' .. colors.four,
         urgent      = '#' .. colors.eleven,
     },
     border  = '',
+    icons = {
+        one = '  ',
+        two = '  ',
+        three = ' ? ',
+    },
+    gap = 10,
 }
 
 theme.tasklist      = {
     bg      = {
-        normal      = "#" .. colors.twelve .. "80",
-        focus       = "#" .. colors.eleven .. "B3",
+        normal      = "#" .. colors.four .. "80",
+        focus       = "#" .. colors.eleven .. "B0",
         urgent      = theme.taglist.bg.urgent,
     },
     fg      = {
         normal      = theme.fg_normal,
-        focus       = '#' .. colors.zero,
+        focus       = '#' .. colors.four,
         urgent      = theme.taglist.fg.urgent,
     },
     border  = '',
@@ -76,8 +83,18 @@ theme.mpd           = {
     },
 
     now_playing = {
-        bg = '#' .. colors.one .. "80",
-        fg = '',
+        bg = gears.color{
+            type = "linear",
+            from = { 0, 0 },
+            to   = {640, 0 } ,
+            stops = {{0, "#"..colors.five.."99"}, {0.5, '#'..colors.zero..'99'}, {1, "#"..colors.twelve.."99"}, }
+        },
+        fg = gears.color{
+            type = 'linear',
+            from = {0,0},
+            to = {640,0},
+            stops = {{0, '#'..colors.six},{1, '#'..colors.fifteen}},
+        },
         border = '',
     },
 
@@ -92,7 +109,12 @@ theme.mpd           = {
 }
 
 theme.prompt        = {
-    bg      = '#' .. colors.four,
+    bg      = gears.color{
+        type = "linear",
+        from = { 0, 32 },
+        to   = { 480, 0 } ,
+        stops = {{0, "#"..colors.one..'bf'}, {1, "#"..colors.four..'bf'}, }
+    },
     fg      = '#' .. colors.twelve,
     border  = '#' .. colors.twelve,
 }
@@ -103,7 +125,7 @@ theme.tray          = {
     border  = '#' .. colors.ten,
 }
 
-theme.bg_normal         		= theme.bg.normal
+theme.bg_normal         		= theme.bg.normal .. '#00'
 theme.fg_normal         		= theme.fg.normal
 
 theme.border_width      		= theme.border.width

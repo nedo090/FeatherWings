@@ -22,34 +22,21 @@ function tags.setup()
 
         local gap = 10
 
-        awful.tag.add(' 1 ', {
-            layout = awful.layout.suit.tile,
-            gap = gap,
+        awful.tag.add(beautiful.taglist.icons.one, {
+            layout = awful.layout.suit.tile.bottom,
+            gap = beautiful.taglist.gap,
             screen = s,
         })
 
-        awful.tag.add(' 2 ', {
+        awful.tag.add(beautiful.taglist.icons.two, {
             layout = awful.layout.suit.tile,
-            gap = gap,
+            gap = beautiful.taglist.gap,
             screen = s,
         })
 
-        awful.tag.add(' 3 ', {
+        awful.tag.add(beautiful.taglist.icons.three, {
             layout = awful.layout.suit.tile,
-            gap = gap,
-            screen = s,
-        })
-
-        awful.tag.add(' 4 ', {
-            layout = awful.layout.suit.tile,
-            gap = gap,
-            screen = s,
-
-        })
-
-        awful.tag.add(' 5 ', {
-            layout = awful.layout.suit.tile,
-            gap = gap,
+            gap = beautiful.taglist.gap,
             screen = s,
         })
 
