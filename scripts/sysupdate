@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Synchronizing database..."
+sudo emerge --sync
+echo "Database synchronized!"
+sleep 1.5 &&
+
+echo "Updating System..."
+sudo emerge --update --deep --keep-going --newuse --verbose --ask @world
+echo "System updated!"
+sleep 1.5 &&
+
+echo "cleaning system..."
+sudo emerge --depclean --verbose --ask
+echo "System cleaned!"
+sleep 2 &&
+clear
