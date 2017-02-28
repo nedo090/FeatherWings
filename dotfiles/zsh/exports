@@ -8,6 +8,6 @@ export HISTFILE=$XDG_DATA_HOME/zsh/histfile
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export PASSWORD_STORE_DIR=$XDG_DATA_HOME/pass/password-store
 export WEECHAT_HOME=$XDG_DATA_HOME/weechat
-export BROWSER="qutebrowser --backend webengine"
+export BROWSER="/usr/bin/qutebrowser --backend webengine"
 export ZSETUP=$ZDOTDIR/setup.zsh
 export ZALIASES="$ZDOTDIR/aliases.zsh"
