@@ -31,3 +31,9 @@ function! ChangeTabBindings()
         nnoremap <s-tab> <nop>
     endif
 endfunc
+
+function! Writing()
+    set nonumber norelativenumber
+    highlight normal ctermbg=0
+    set laststatus=1
+endfunc

@@ -54,7 +54,7 @@ theme.taglist       = {
     icons = {
         one = '  ',
         two = '  ',
-        three = ' ? ',
+        three = ' ? '
     },
     gap = 10,
 }
