@@ -1,0 +1,17 @@
+#!/bin/bash
+
+options=(`tmux ls | awk '{FS=":"; print $1}' | tr -d ":"` "Quit")
+
+select opt in ${options[@]}
+do
+    case $opt in
+        "${options[$REPLY-1]}")
+            if [ "$opt" == "Quit" ]; then
+                echo "exiting..."
+                break
+            fi
+            tmux attach -t $opt 
+            break
+            ;;
+    esac
+done

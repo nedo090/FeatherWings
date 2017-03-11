@@ -1,0 +1,7 @@
+#!/bin/bash
+
+( ( chromium --incognito --app=http://thestockmarketwatch.com/markets/today.aspx ) & )
+( ( chromium --incognito --app=http://www.howthemarketworks.com) & )
+( ( chromium --incognito --app=http://www.wallstreetsurvivor.com) & )
+( ( chromium --incognito --app=http://www.investopedia.com/simulator/) & )
+( ( termite --name 'stock-watch' -t 'stock-watch' -e ~/go/bin/mop ) & )

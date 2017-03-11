@@ -51,16 +51,9 @@ if (cp /dev/null "${errorlog}"); then
   exec >"${errorlog}" 2>&1
   break
 fi
-# AutoStart {{{1
-#
-numlockx &
-# MPD
-( ( sleep 10 && mpd ) & )
 
-# compton
-( ( sleep 10 && compton ) & )
+( ( /home/professoroptics/scripts/autostart ) & )
 
-#numlockx
 # Window Manager {{{1
 exec awesome
 # vim:foldmethod=marker:foldcolumn=3:foldlevel=0

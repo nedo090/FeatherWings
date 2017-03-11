@@ -13,7 +13,7 @@ function widgets.setup()
         s.widgets = widgets
 
         -- Define the wiboxes
-        s.widgets.tags.wibox = wibox { height = 25, width = 160, visible = true, bg = '#00', fg=beautiful.taglist.fg.normal, type = 'dock', }
+        s.widgets.tags.wibox = wibox { height = 25, width = 200, visible = true, bg = '#00', fg=beautiful.taglist.fg.normal, type = 'dock', }
         s.widgets.prompt.wibox = wibox { height = 25, width = 512, visible = false, ontop = true, bg = beautiful.prompt.bg, fg = beautiful.prompt.fg, type = 'dock', shape = gears.shape.hexagon}
         s.widgets.tasklist.wibox = wibox { height = 25, width = 1280, visible = true, bg = '#00', type = 'dock'}
         s.widgets.mpd.ctl.wibox = wibox { height = 25, width = 116, visible = true, bg = beautiful.mpd.ctl.bg, fg = beautiful.mpd.ctl.fg, type = 'dock', }
@@ -80,7 +80,7 @@ function widgets.setup()
 
         -- Add widgets to containers
         -- Add reserved space for widgets that need it
-        s.widgets.tags.wibox:struts{ top = s.widgets.tags.wibox.height }
+        s.widgets.tags.wibox:struts{ top = s.widgets.tags.wibox.height + 2*s.widgets.tags.wibox.border_width}
         s.widgets.tasklist.wibox:struts{ bottom = s.widgets.tasklist.wibox.height }
 
         -- Be sure the widgets are were they belong

@@ -1,0 +1,91 @@
+#!/bin/bash
+
+bold=$( tput bold )
+normal=$( tput sgr0 )
+
+if [ $# -gt 0 ]; then
+    directory=$BOOKDIR/${1}
+    summary=$directory/summary
+
+    if [ ! -d "$directory" ]; then
+        #make dir
+        echo "${normal}`basename $directory`: ${bold}directory does not exist. Creating...${normal}"
+        mkdir -p $directory
+        sleep 1.5
+        echo "${normal}`basename $directory`: ${bold}directory created!${normal}"
+        sleep .5
+
+        #create starting files
+        echo "${normal}`basename $directory`/summary: ${bold}file does not exist. Creating...${normal}"
+        touch $summary
+        echo "# vim: ft=book" > $summary
+        echo "" >> $summary
+        echo "SYNOPSIS:" >> $summary
+        echo "" >> $summary
+        sleep 1.5
+        echo "${normal}`basename $directory`/summary: ${bold}file created!${normal}"
+        sleep .5
+    fi
+
+
+    if [ -z "`tmux ls | grep ${1}`" ]; then
+        echo
+        echo "session doesn't exist. Creating..."
+        sleep 1.5
+        ( ( tmux new -d -n summary -s ${1} "nvim $summary" ) & )
+        echo session created!
+    fi
+
+    sleep 1.5
+    echo 'starting environment...'
+    sleep 1.5
+
+    if [ `ls -1 $directory | wc -l` -gt 1 ]; then
+        for i in $directory/chapter*; do
+            name="`basename $i`"
+            if [ -z "`tmux lsw -t ${1} | grep $name`" ]; then
+                ( ( tmux neww -d -t ${1} -n "$name" "nvim '$i'" ) & )
+            fi
+        done
+    fi
+    ( ( tmux new -d -t ${1} -s "${1}*" ) & )
+    echo "environment started!"
+
+    ( ( termite --name book -t ${1} -e "tmux attach -t ${1}" ) & )
+    ( ( termite --name book -t "${1}*" -e "tmux attach -t '${1}*':2" ) & )
+
+else
+    sessions=`ls -1 $BOOKDIR | wc -l`
+
+    if [[ sessions -gt 1  ]]; then
+        echo creating $sessions sessions...
+    else
+        echo creating $sessions session...
+    fi
+
+    echo
+
+    for i in $BOOKDIR/*; do
+        target="`basename $i`"
+
+        echo creating session $target...
+        sleep 1
+        if [ -z "`tmux ls | grep $target`" ]; then
+            ( ( tmux new -d -s $target -n summary "nvim '$i/summary'") )
+        fi
+
+        for j in `ls -1 $i`; do
+            if [ ! $j == "summary" ]; then
+                window="`basename $j`"
+                if [ -z "`tmux lsw -t $target | grep $window`" ]; then
+                    ( ( tmux neww -t $target -n $window "nvim '$i/$j'" ) )
+                fi
+            fi
+        done
+
+        echo session ${bold}$target created!${normal}
+        echo
+    done
+
+    ( ( termite -t "  " --name book -e "sessions" ) & )
+fi

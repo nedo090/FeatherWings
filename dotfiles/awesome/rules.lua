@@ -18,8 +18,8 @@ function rules.set()
         placement = awful.placement.no_overlap+awful.placement.no_offscreen,
         sticky = false,
         switchtotag = true,
-        tag = awful.screen.focused().tags[3],
-    }
+        tag = awful.screen.focused().tags[6],
+    },
 },
 
 -- Floating clients.
@@ -57,10 +57,26 @@ function rules.set()
     callback = function(c)
         awful.spawn.with_shell("mpc pause")
         awful.client.setslave(c)
+        c:connect_signal('unmanage', function() 
+        end)
     end},
 
-    { rule = { class = 'qutebrowser' },
-    properties = { tag = awful.screen.focused().tags[2] }},
+    { rule_any = { class = { 'qutebrowser' }, role = { 'browser' }},
+    properties = { tag = awful.screen.focused().tags[2], floating = false }},
+
+    { rule_any = { instance = {'stock-watch', 'www.investopedia.com__simulator', 'www.wallstreetsurvivor.com', 'www.howthemarketworks.com', 'thestockmarketwatch.com__markets_today.aspx'} },
+    properties = { tag = awful.screen.focused().tags[3], floating = false }},
+
+    {rule_any = { instance = {'stock-watch'} },
+    callback = function(c)
+        awful.client.setmaster(c)
+    end},
+
+    { rule_any = { instance = {'book'} },
+    properties = { tag = awful.screen.focused().tags[4] }},
+
+    { rule = { instance = 'coding' },
+    properties = { tag = awful.screen.focused().tags[5] }},
 }
 end
 

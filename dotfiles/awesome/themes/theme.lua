@@ -52,9 +52,12 @@ theme.taglist       = {
     },
     border  = '',
     icons = {
-        one = '  ',
-        two = '  ',
-        three = ' ? '
+        one = '  ',
+        two = '  ',
+        three = '  ',
+        four = '  ',
+        five = '  ',
+        six = '  ',
     },
     gap = 10,
 }
@@ -99,12 +102,12 @@ theme.mpd           = {
     },
 
     icons   = {
-        play = '  ',
-        pause = '  ',
-        stop = '  ',
-        prev = '  ',
-        nxt = '  ',
-        plr = '  ',
+        play = '  ',
+        pause = '  ',
+        stop = '  ',
+        prev = '  ',
+        nxt = '  ',
+        plr = '  ',
     }
 }
 

@@ -1,0 +1,8 @@
+#!/bin/bash
+( ( sleep 10 && numlockx ) & )
+( ( sleep 10 && mpd ) & )
+( ( sleep 10 && compton ) & )
+( ( sleep 10 && write ) & )
+( ( sleep 10 && stocks ) & )
+( ( sleep 10 && qutebrowser --backend webengine ) & )
+( ( sleep 10 && termite -e "tmux new -A -s 'personal'" ) & )

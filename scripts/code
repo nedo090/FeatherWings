@@ -1,0 +1,3 @@
+#!/bin/bash
+
+( ( cd $HOME/documents/coding; termite --name coding -t coding -e "tmux new -A -s 'coding' \; split-window -h -d -p 10 \; split-window -v -d -p 10" ) & )
