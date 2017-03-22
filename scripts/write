@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -z "$DISPLAY" ]; then
+    echo "cannot run without a display. exiting..."
+    sleep .5
+    exit
+fi
+
 bold=$( tput bold )
 normal=$( tput sgr0 )
 
@@ -48,11 +54,12 @@ if [ $# -gt 0 ]; then
             fi
         done
     fi
-    ( ( tmux new -d -t ${1} -s "${1}*" ) & )
+    ( ( tmux new -d -s "${1}*" -t "${1}" ) & )
     echo "environment started!"
 
     ( ( termite --name book -t ${1} -e "tmux attach -t ${1}" ) & )
-    ( ( termite --name book -t "${1}*" -e "tmux attach -t '${1}*':2" ) & )
+    sleep .5
+    ( ( termite --name book -t "${1}*" -e "tmux attach -t '${1}*'" ) & )
 
 else
     sessions=`ls -1 $BOOKDIR | wc -l`
@@ -83,9 +90,13 @@ else
             fi
         done
 
+        ( ( tmux new -d -s "$target*" -t "$target" ) & )
+
         echo session ${bold}$target created!${normal}
         echo
     done
 
-    ( ( termite -t "  " --name book -e "sessions" ) & )
+    for i in {1..2}; do
+        ( ( termite -t "$i:  " --name book -e "sessions" ) & )
+    done
 fi

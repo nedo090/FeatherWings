@@ -17,7 +17,7 @@ function widgets.setup()
         s.widgets.prompt.wibox = wibox { height = 25, width = 512, visible = false, ontop = true, bg = beautiful.prompt.bg, fg = beautiful.prompt.fg, type = 'dock', shape = gears.shape.hexagon}
         s.widgets.tasklist.wibox = wibox { height = 25, width = 1280, visible = true, bg = '#00', type = 'dock'}
         s.widgets.mpd.ctl.wibox = wibox { height = 25, width = 116, visible = true, bg = beautiful.mpd.ctl.bg, fg = beautiful.mpd.ctl.fg, type = 'dock', }
-        s.widgets.mpd.now_playing.wibox = wibox { height = 25, width = 640, visible = false, ontop = true, bg = beautiful.mpd.now_playing.bg, fg = beautiful.mpd.now_playing.fg,  type = 'dock', shape = gears.shape.hexagon}
+        s.widgets.mpd.now_playing.wibox = wibox { height = 25, width = 640, visible = false, bg = beautiful.mpd.now_playing.bg, fg = beautiful.mpd.now_playing.fg,  type = 'dock', shape = gears.shape.hexagon}
 
         -- Define the widgets
         s.widgets.tags.widget = awful.widget.taglist(s, awful.widget.taglist.filter.all, bindings.taglist(), {})
@@ -29,7 +29,7 @@ function widgets.setup()
         s.widgets.mpd.ctl.nxt = wibox.widget.textbox(beautiful.mpd.icons.nxt)
         s.widgets.mpd.ctl.plr = wibox.widget.textbox(beautiful.mpd.icons.plr)
         mpd = lain.widget.mpd({
-            timeout = 0.01,
+            timeout = 1,
             settings = function ()
                 if mpd_now.state == "play" then
                     mpd_now.artist = mpd_now.artist:upper():gsub("&.-;", string.lower)
@@ -55,13 +55,11 @@ function widgets.setup()
         s.widgets.mpd.ctl.play:buttons(awful.util.table.join(awful.button({  }, 1,
         function()
             awful.spawn.with_shell("mpc toggle")
-            mpd.update()
         end)))
         s.widgets.mpd.ctl.stop:buttons(awful.util.table.join(awful.button({  }, 1,
         function()
             s.widgets.mpd.ctl.play:set_markup(beautiful.mpd.icons.play)
             awful.spawn.with_shell("mpc stop")
-            mpd.update()
         end)))
         s.widgets.mpd.ctl.nxt:buttons(awful.util.table.join(awful.button({ }, 1,
         function()

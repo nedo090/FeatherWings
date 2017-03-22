@@ -1,3 +1,17 @@
 #!/bin/bash
 
-( ( cd $HOME/documents/coding; termite --name coding -t coding -e "tmux new -A -s 'coding' \; split-window -h -d -p 10 \; split-window -v -d -p 10" ) & )
+if [ -z "$DISPLAY" ]; then
+    echo "cannot run without a display. exiting..."
+    sleep .5
+    exit
+fi
+
+function Code {
+    if [ -n "`tmux ls | grep "coding"`" ]; then
+        termite --name coding -t "  " -e "tmux attach -t coding"
+    else
+        termite --name coding -t "  " -e "tmux new -s 'coding' \; split-window -h -d -p 10 \; split-window -v -d -p 10"
+    fi
+}
+
+( ( cd $HOME/documents/coding; Code ) & )

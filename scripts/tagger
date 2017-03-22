@@ -1,0 +1,80 @@
+#!/bin/bash
+
+if [ $# -gt 0 ]; then
+    echo arguments not needed
+    exit
+fi
+
+echo starting tagger...
+sleep 1.5
+clear
+
+musicdir=~/music
+
+echo select the genre...
+options=(`ls -1 $musicdir | sed -e "s/[[:lower:]]/\u&/"` "Quit")
+select opt in ${options[@]}; do
+    case $opt in
+        "${options[$REPLY-1]}")
+            if [ "$opt" == "Quit" ]; then
+                echo exiting...
+                sleep 1.5
+                clear
+                exit
+            fi
+            directory=$musicdir/`sed -e "s/[[:upper:]]/\l&/" <<< $opt`
+            genre=$opt
+            break
+            ;;
+    esac
+done
+
+clear
+
+echo select the artist/composer...
+options=(`ls -1 "$directory"` "Quit")
+select opt in ${options[@]}; do
+    case $opt in
+        "${options[$REPLY-1]}")
+            if [ "$opt" == "Quit" ]; then
+                echo exiting...
+                sleep 1.5
+                clear
+                exit
+            fi
+            directory=$directory/$opt
+            artist=$opt
+            break
+            ;;
+    esac
+done
+
+ttno=`find $directory -type f | wc -l`
+album="$artist Favourites"
+year=`date +%Y`
+sleep 1
+clear
+
+echo tagging $ttno files...
+echo
+
+ls -1R $directory| grep "\.[a-z]*" |\
+    while read filename; do
+        title=`sed "s/\(.*\)\..*/\1/g" <<< $filename`
+        tno=$(($tno + 1))
+        DIR="`find $directory/*/"$filename"`"
+        if [ ! -f "$DIR" ]; then
+            DIR="`find $directory/"$filename"`"
+        fi
+        echo -n "tagging $title..."
+        sleep 1.5
+        id3v2 -t "$title" -T $tno/$ttno -g "$genre" -a "$artist" -A "$album" -y "$year" "$DIR"
+        echo "done"
+    done
+
+echo
+echo tagging complete
+
+sleep 1
+clear
+exit

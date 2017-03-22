@@ -1,7 +1,14 @@
 #!/bin/bash
 
+if [ -z "$DISPLAY" ]; then
+    echo "cannot run without a display. exiting..."
+    sleep .5
+    exit
+fi
+
 ( ( chromium --incognito --app=http://thestockmarketwatch.com/markets/today.aspx ) & )
 ( ( chromium --incognito --app=http://www.howthemarketworks.com) & )
 ( ( chromium --incognito --app=http://www.wallstreetsurvivor.com) & )
 ( ( chromium --incognito --app=http://www.investopedia.com/simulator/) & )
+( ( chromium --incognito --app=https://www.etoro.com/portfolio) & )
 ( ( termite --name 'stock-watch' -t 'stock-watch' -e ~/go/bin/mop ) & )

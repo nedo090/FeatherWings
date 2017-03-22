@@ -1,8 +1,19 @@
 #!/bin/bash
+
+if [ -z "$AUTOSTARTED" ]; then
+    echo already autostarted
+    exit
+fi
+
 ( ( sleep 10 && numlockx ) & )
 ( ( sleep 10 && mpd ) & )
 ( ( sleep 10 && compton ) & )
+( ( sleep 10 && transmission-daemon ) & )
 ( ( sleep 10 && write ) & )
 ( ( sleep 10 && stocks ) & )
+( ( sleep 10 && code ) & )
 ( ( sleep 10 && qutebrowser --backend webengine ) & )
-( ( sleep 10 && termite -e "tmux new -A -s 'personal'" ) & )
+( ( sleep 10 && termite -e "wyrd" --name "wyrd" -t "wyrd" ) & )
+( ( sleep 10 && termite -e "ranger" -t "ranger" ) & )
+( ( sleep 10 && termite -e "watch -n1 transmission-remote -l" -t "transmission" ) & )
+( ( sleep 10 && termite -e "ncmpcpp" -t "ncmpcpp" ) & )

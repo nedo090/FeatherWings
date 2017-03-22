@@ -33,7 +33,8 @@ function! ChangeTabBindings()
 endfunc
 
 function! Writing()
+    let g:deoplete#enable_at_startup=0 
+    call deoplete#disable()
     set nonumber norelativenumber
-    highlight normal ctermbg=0
     set laststatus=1
 endfunc

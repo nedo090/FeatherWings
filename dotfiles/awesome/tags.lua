@@ -1,7 +1,7 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local gears = require("gears")
-local widgets = require('widgets')
+local widgets = require('themes.fire&ice.widgets')
 
 local tags = {}
 
@@ -24,7 +24,7 @@ function tags.setup()
         local gap = 10
 
         awful.tag.add(beautiful.taglist.icons.one, {
-            layout = awful.layout.suit.tile.bottom,
+            layout = awful.layout.suit.corner.nw,
             gap = beautiful.taglist.gap,
             screen = s,
         })
@@ -39,6 +39,7 @@ function tags.setup()
             layout = awful.layout.suit.spiral.dwindle,
             gap = 2.5,
             screen = s,
+            master_count = 2,
         })
 
         awful.tag.add(beautiful.taglist.icons.four, {

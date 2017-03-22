@@ -30,7 +30,8 @@ function bits.error_handling()
 end
 
 function bits.set()
-    beautiful.init('/home/professoroptics/.dotfiles/awesome/themes/fire&ice/theme.lua')
+    theme = "neon"
+    beautiful.init('/home/professoroptics/.dotfiles/awesome/themes/'..theme..'/theme.lua')
     terminal = "termite"
     editor = os.getenv("EDITOR") or "nano"
     editor_cmd = terminal .. " -e " .. editor

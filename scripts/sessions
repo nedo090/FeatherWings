@@ -10,7 +10,7 @@ do
                 echo "exiting..."
                 break
             fi
-            tmux attach -t $opt 
+            tmux attach -t $opt
             break
             ;;
     esac

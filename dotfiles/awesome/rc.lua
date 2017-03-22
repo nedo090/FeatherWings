@@ -1,9 +1,9 @@
 require("awful.autofocus")
 require('bits&pieces').error_handling()
 require('bits&pieces').set()
-require('layouts').layouts()
+require('themes.'..theme..'.layouts').layouts()
 require("tags").setup()
-require('widgets').setup()
+require('themes.'..theme..'.widgets').setup()
 require("rules").set()
 require("signals").signals()
 
