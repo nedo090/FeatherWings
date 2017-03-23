@@ -110,7 +110,7 @@ function bindings.global()
     awful.key({ bindings.modkey }, "x",
     function ()
         local s = awful.screen.focused()
-        s.prompt = require('widgets').prompt
+        s.prompt = require('themes.'..theme..'.widgets').prompt
         s.prompt.wibox.visible = true
 
         awful.prompt.run {
