@@ -35,6 +35,14 @@ function bits.set()
     terminal = "termite"
     editor = os.getenv("EDITOR") or "nano"
     editor_cmd = terminal .. " -e " .. editor
+    --
+    -- Enable sloppy focus, so that focus follows mouse.
+    client.connect_signal("mouse::enter", function(c)
+            if require("awful").layout.get(c.screen) ~= require("awful").layout.suit.magnifier
+                    and require("awful").client.focus.filter(c) then
+                    client.focus = c
+            end
+    end)
 end
 
 return bits

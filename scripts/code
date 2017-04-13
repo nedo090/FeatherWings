@@ -10,7 +10,7 @@ function Code {
     if [ -n "`tmux ls | grep "coding"`" ]; then
         termite --name coding -t "  " -e "tmux attach -t coding"
     else
-        termite --name coding -t "  " -e "tmux new -s 'coding' \; split-window -h -d -p 10 \; split-window -v -d -p 10"
+        termite --name coding -t "  " -e "tmux new -s 'coding' \; split-window -v -d -p 10 \; split-window -h -d -p 49 \; split-window -h -d -t2 -p5"
     fi
 }
 

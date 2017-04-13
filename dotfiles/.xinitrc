@@ -1,8 +1,5 @@
 #!/bin/sh
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
 export AUTOSTARTED=yes
 ibus-daemon -drx
 
@@ -12,7 +9,7 @@ extern=HDMI1
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 
 if xrandr | grep "$extern disconnected"; then
-        xrandr --output "$extern" --off --output "$intern" --auto        
+        xrandr --output "$extern" --off --output "$intern" --auto
 else
         xrandr --output "$intern" --off --output "$extern" --mode auto --primary
 fi

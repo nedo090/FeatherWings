@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "Synchronizing database..."
+sudo layman -S
 sudo emerge --sync
 echo "Database synchronized!"
 sleep 1.5 &&

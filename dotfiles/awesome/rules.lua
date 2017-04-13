@@ -65,7 +65,7 @@ function rules.set()
     { rule_any = { class = { 'qutebrowser', 'Chromium-browser' }, role = { 'browser' }},
     properties = { tag = awful.screen.focused().tags[2] }},
 
-    { rule_any = { instance = {'www.investopedia.com__simulator', 'www.wallstreetsurvivor.com', 'www.howthemarketworks.com', 'thestockmarketwatch.com__markets_today.aspx', 'www.etoro.com__portfolio'} },
+    { rule_any = { instance = {'www.bloomberg.com__africa', 'thestockmarketwatch.com__markets_today.aspx', 'www.etoro.com__portfolio'} },
     properties = { tag = awful.screen.focused().tags[3], floating = false },
     callback = function(c) awful.client.setslave(c) end},
 

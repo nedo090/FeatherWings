@@ -12,6 +12,7 @@ fi
 ( ( sleep 10 && write ) & )
 ( ( sleep 10 && stocks ) & )
 ( ( sleep 10 && code ) & )
+( ( sleep 10 && mediatomb ) & )
 ( ( sleep 10 && unclutter -idle 1 -root -grab ) & )
 ( ( sleep 10 && qutebrowser --backend webengine ) & )
 ( ( sleep 10 && termite -e "wyrd" --name "wyrd" -t "wyrd" ) & )

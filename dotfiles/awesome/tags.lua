@@ -36,10 +36,9 @@ function tags.setup()
         })
 
         awful.tag.add(beautiful.taglist.icons.three, {
-            layout = awful.layout.suit.spiral.dwindle,
+            layout = awful.layout.suit.corner.ne,
             gap = 2.5,
             screen = s,
-            master_count = 2,
         })
 
         awful.tag.add(beautiful.taglist.icons.four, {
