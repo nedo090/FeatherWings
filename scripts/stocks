@@ -9,4 +9,4 @@ fi
 ( ( chromium --incognito --app=http://thestockmarketwatch.com/markets/today.aspx ) & )
 ( ( chromium --incognito --app=https://www.etoro.com/portfolio) & )
 ( ( chromium --incognito --app=https://www.bloomberg.com/africa) & )
-( ( termite --name 'stock-watch' -t 'stock-watch' -e ~/go/bin/mop ) & )
+( ( termite --name 'stock-watch' -t 'stock-watch' -e ~/.go/bin/mop ) & )
