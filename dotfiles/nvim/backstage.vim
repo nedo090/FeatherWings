@@ -1,27 +1,45 @@
-set number
-syntax enable
-set cursorline
-filetype indent on
+set clipboard+=unnamedplus
+set hidden
+set nocompatible
 set showmatch
 set incsearch
 set hlsearch
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set listchars=tab:¬\ ,eol:▸
+set cursorline
 set linebreak
-
-nmap <c-s-p> :call <SID>SynStack()<cr>
-function! <SID>SynStack()
-        if !exists('*synstack')
-                return
-        endif
-        echo map(synstack(line('.'), col('.')),'synIDattr(v:val,"name")')
-endfunc
+set listchars=tab:¬\ ,eol:▸
+set foldmethod=marker
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_smart_case = 1
+let g:UltiSnipsEditSplit = "vertical"
+let g:UltiSnipsExpandTrigger = '<leader>ue'
+let g:UltiSnipsJumpForwardTrigger = '<leader>uf'
+let g:UltiSnipsJumpBackwardTrigger = '<leader>ub'
+
+let g:neomake_error_sign  = {
+                        \ 'text': '',
+                        \ 'texthl': 'NeomakeErrorSign',
+                        \ }
+let g:neomake_warning_sign  = {
+                        \ 'text': '',
+                        \ 'texthl': 'NeomakeWarningSign',
+                        \ }
+
+let g:neomake_cpp_clang_maker = {
+                        \ 'args': ['-std=c++11'],
+                        \ }
+
+let g:neomake_cpp_gcc_maker = {
+                        \ 'args': ['-std=c++11'],
+                        \ }
+
+if has("autocmd")
+        augroup setup
+                au!
+                autocmd! filetype cpp,tex,vim :call Programming()
+                autocmd! tabnew,tabclosed,bufread,bufdelete,bufadd,bufnewfile *
+                                        \ :call ChangeTabBindings()
+                autocmd! bufwritepost * :Neomake
+        augroup END
+endif

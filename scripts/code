@@ -14,4 +14,4 @@ function Code {
     fi
 }
 
-( ( cd $HOME/documents/coding; Code ) & )
+( ( cd $HOME/git/featherwings/coding; Code ) & )

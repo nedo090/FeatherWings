@@ -1,0 +1,36 @@
+priority 99
+
+snippet li "Add the license"
+/*
+	`!v bufname('%')`
+
+	@author: Anthony Mans
+	${1:@module: $2}
+	@student#: 54875064
+	@date: ${3:`date '+%b %d, %Y'`}
+
+ */
+endsnippet
+
+snippet fun "Function Definition"
+${1:void} ${2:funcion_name}(${3:void}){
+/*
+	
+	@description:
+	$4
+
+	@param: $3
+	@return: $1 $6
+
+*/
+	${5:return ${6:void()};}
+
+}// end function: $2
+endsnippet
+
+snippet main "main function"
+int main(void){
+
+	return 0;
+}// end function: main
+endsnippet
