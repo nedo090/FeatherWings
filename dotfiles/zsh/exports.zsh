@@ -12,4 +12,4 @@ export BROWSER="/usr/bin/qutebrowser --backend webengine"
 export ZSETUP=$ZDOTDIR/setup.zsh
 export ZALIASES="$ZDOTDIR/aliases.zsh"
 export GOPATH=~/go
-export BOOKDIR=~/documents/books
+export BOOKDIR=~/git/featherwings/books

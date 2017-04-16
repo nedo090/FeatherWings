@@ -27,11 +27,11 @@ let g:neomake_warning_sign  = {
                         \ }
 
 let g:neomake_cpp_clang_maker = {
-                        \ 'args': ['-std=c++11'],
+                        \ 'args': ['-std=c++14'],
                         \ }
 
 let g:neomake_cpp_gcc_maker = {
-                        \ 'args': ['-std=c++11'],
+                        \ 'args': ['-std=c++14'],
                         \ }
 
 if has("autocmd")

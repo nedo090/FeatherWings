@@ -5,7 +5,7 @@ std::vector<int> get_input();
 void print_output ( std::vector<int> v );
 
 int main(void){
-
+        print_output ( get_input() );
         return 0;
 }// end function: main
 
@@ -22,4 +22,10 @@ std::vector<int> get_input() {
         }
 
         return input;
+}
+
+void print_output ( std::vector<int> v ) {
+        for ( int i = v.size() - 1; i >= 0; i-- ) {
+                std::cout << v[i] << " ";
+        }
 }
