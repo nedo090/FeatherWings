@@ -79,25 +79,19 @@ float calculate_median( const std::vector<int>& v ) {
 }
 
 std::vector<float> build_quartiles( const std::vector<int>& v, const float& median ) {
-        //TODO resolve issue with odd and even number of elements when
-        //calculaitng the quartiles
         std::vector<float> quartiles;
 
         for ( int i = 0; i < 2; i++ ) {
                 std::vector<int> tmp = std::vector<int>();
 
                 for ( int j = 0; j < v.size(); j++ ) {
-                        //if ( v[j] <= median && i == 0 ) {
-                        //        if ( j != (v.size() / 2 ))
-                        //                tmp.push_back( v[j] );
-                        //        else
-                        //}
-                        //else if ( v[j] >= median && i == 1 ){
-                        //        if ( j != (v.size() / 2 ))
-                        //                tmp.push_back( v[j] );
-                        //}
+                        if ( v[j] <= median && i == 0 ) {
+                                tmp.push_back( v[j] );
+                        }
+                        else if ( v[j] >= median && i == 1 ){
+                                tmp.push_back( v[j] );
+                        }
                 }
-
                 quartiles.push_back( calculate_median( tmp ) );
         }
 

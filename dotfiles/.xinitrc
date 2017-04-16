@@ -5,13 +5,12 @@ ibus-daemon -drx
 
 intern=eDP1
 extern=HDMI1
-
-xrandr --setprovideroutputsource modesetting NVIDIA-0
+resolution=1920x1080
 
 if xrandr | grep "$extern disconnected"; then
         xrandr --output "$extern" --off --output "$intern" --auto
 else
-        xrandr --output "$intern" --off --output "$extern" --mode auto --primary
+        xrandr --output "$intern" --off --output "$extern" --mode $resolution --primary
 fi
 
 # {{{1

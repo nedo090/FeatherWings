@@ -1,143 +1,155 @@
-vim: ft=book
-
 SYNOPSIS:
-A boy is born as a demi-god.
+	A boy is born as a demi-god.
 
 CHAPTER 1: The day his world changed...
-    CHARACTERS:
-        Protagonist:    Kai Trevnets
-        Bully 1:        Charles Sewil
-        Bully 2:        Mark Snam
-        Bully 3:        Darrel Srekciv
-        Bullied Girl:   Aurora Elizabeth
+	CHARACTERS:
+		Protagonist:	Kai Trevnets
+		Bully 1:	Charles Sewil
+		Bully 2:	Mark Snam
+		Bully 3:	Darrel Srekciv
+		Bullied Girl:	Aurora Elizabeth
 
-    Kai Trevnets is smaller than most other boys his age.
-    He is often picked on by the other students because of his size and poor performance at school.
-    His days consist of going to school,
-    running errands for his mother,
-    and doing chores around the house.
-    one day,
-    whilst waiting for class to begin,
-    Kai witnesses Aurora Elizabeth,
-    the girl he has a crush on,
-    bump into Charles Siwel,
-    the meanest of the three bullies.
-    being especially bad tempered,
-    he starts to pick on her.
-    the other bullies come to back him up and to stop anyone from interfering.
-    at first,
-    he doesn't want to get involved out of fear for the bullies,
-    then Kai realizes this is his chance to get Aurora's attention,
-    and with a spark of courage,
-    he approaches the bullies and demands them to leave the girl alone.
-    annoyed at the interruption,
-    Charles instructs Mark and Darrel to deal with the interruption,
-    and they begin pushing Kai around while Charles returns his attention to Aurora.
-    a crowd has started to gather,
-    and before things get serious,
-    a teacher comes to chase them to class.
-    The bullies leave while cursing Kai under their breaths.
-    The group disband,
-    Aurora picks up her things and passes Kai on her way to class.
-    She reveals a shy smile while passing him.
-    Expecting something more than a smile,
-    Kai hardly notices and follows Aurora to class.
-    When school ends,
-    Kai hasn't gotten any sign that Aurora has begun to notice him.
-    Upset,
-    he goes to his locker to collect what he needs to take home with him.
-    Inside his locker,
-    he finds a pink envelope.
-    He picks up the envelope and inspects it.
-    on the front,
-    it says: "To Kai."
-    He's never received such a letter before,
-    so he is cautious while opening it.
-    The letter is from Aurora,
-    telling him she would like to speak with him after school behind the school building.
-    With haste,
-    he gets his things,
-    and rushes with excitement to where he was supposed to meet her.
-    Is she going to confess to him,
-    or ask him out?
-    Thought race through his mind.
-    he gets to the place,
-    and no one is there.
-    thinking that Aurora is late,
-    he waits.
-    after several minutes,
-    a teacher appears from the side of the building.
-    after a few moments,
-    the teacher stops with a ghastly look on his face.
-    With no hesitation,
-    he approaches Kai with a firm expression.
-    He interrogates Kai about the vandalized wall,
-    which Kai hadn't even noticed.
-    When Kai looks,
-    he sees the back of the building is covered with paint.
-    The teacher doesn't wait for an answer,
-    and drags Kai to the principal's office.
-    on the way there,
-    he glimpses the three bullies smirking while we walks passed them.
-    Their clothes are clean,
-    and he notices a small spot of paint of the same color on one of the bully's neck.
-    Kai points to the bullies,
-    and accuses them of the  deed.
-    the teacher instructs him to not blame others,
-    and continues to the principal's office.
-    Kai is instructed to stay behind and clean up the mess.
-    the sun has begun to set by the time Kai finishes the cleanup.
-    exhausted by the day's events,
-    Kai moved through the town,
-    his feet dragging with exhaustion.
-    deciding to take a shortcut,
-    Kai turns down an alleyway he has used many times before.
-    He follows the alleyway like he usually does,
-    and soon stops dead in his tracks when the sound of scuffling feet echoed down the dimly lit alley.
-    Shortly after,
-    a man's cry for help echoes before a body flies across Kai's vision,
-    hitting the wall beside him.
-    the man's body was mangled beyond recognition.
-    the sight of the blood causes kai's body to freeze from fear.
-    caught up by the sight of the man's corpse,
-    he does not realize the appearance of three heavily scarred,
-    middle aged men behind him.
-    His body feels their intent to kill,
-    the savage thirst for blood before he notices them.
-    Hearing the heavy breathing of the men,
-    Kai darts down the route he came from.
-    Followed by menacing squeels of excitement,
-    he makes for his school.
-    there he takes a wrong turn,
-    and ends up cornered by the three men.
-    They approach him steadily,
-    and his breath speeds up in sync with his rapid heartbeat.
-    He was going to die.
-    His body drenched in switch.
-    He knew this was going to be his last breath.
-    He closed his eyes in anticipation for the excrutiating pain of murder,
-    and embraced himself for death.
-    the men began their relentless attack.
-    Punching him,
-    kicking him,
-    over and over until his breathing was constrained,
-    and he barely conscious.
-    After what felt like hours or years,
-    he heard it.
-    the sound of a knife or sword being unsheathed.
-    He embraced;
-    somewhere deep inside he prayed for mercy.
-    There wasn't any,
-    and when the sharp pain rang through his body,
-    he was engulfed in the deepest blackness.
+	GOAL:
+		Release Kai's powers.
 
+Kai Trevnets is smaller than most other boys his age.
+He is often picked on by the other students because of his size and poor performance at school.
+one day,
+whilst waiting for class to begin,
+Kai witnesses Aurora Elizabeth,
+the girl he has a crush on,
+bump into Charles Siwel,
+the meanest of the three bullies.
+being especially bad tempered,
+he starts to pick on her.
+the other bullies come to back him up and to stop anyone from interfering.
+at first,
+he doesn't want to get involved out of fear for the bullies,
+then Kai realizes this is his chance to get Aurora's attention,
+and with a spark of courage,
+he approaches the bullies and demands them to leave the girl alone.
+annoyed at the interruption,
+Charles instructs Mark and Darrel to deal with the interruption,
+and they begin pushing Kai around while Charles returns his attention to Aurora.
+a crowd has started to gather,
+and before things get serious,
+a teacher comes to chase them to class.
+The bullies leave while cursing Kai under their breaths.
+The group disband,
+Aurora picks up her things and passes Kai on her way to class.
+She reveals a shy smile while passing him.
+Expecting something more than a smile,
+Kai hardly notices and follows Aurora to class.
+When school ends,
+Kai hasn't gotten any sign that Aurora has begun to notice him.
+Upset,
+he goes to his locker to collect what he needs to take home with him.
+Inside his locker,
+he finds a pink envelope.
+He picks up the envelope and inspects it.
+on the front,
+it says: "To Kai."
+He's never received such a letter before,
+so he is cautious while opening it.
+The letter is from Aurora,
+telling him she would like to speak with him after school behind the school building.
+With haste,
+he gets his things,
+and rushes with excitement to where he was supposed to meet her.
+Is she going to confess to him,
+or ask him out?
+Thought race through his mind.
+he gets to the place,
+and no one is there.
+thinking that Aurora is late,
+he waits.
+after several minutes,
+a teacher appears from the side of the building.
+after a few moments,
+the teacher stops with a ghastly look on his face.
+With no hesitation,
+he approaches Kai with a firm expression.
+He interrogates Kai about the vandalized wall,
+which Kai hadn't even noticed.
+When Kai looks,
+he sees the back of the building is covered with paint.
+The teacher doesn't wait for an answer,
+and drags Kai to the principal's office.
+on the way there,
+he glimpses the three bullies smirking while we walks passed them.
+Their clothes are clean,
+and he notices a small spot of paint of the same color on one of the bully's neck.
+Kai points to the bullies,
+and accuses them of the  deed.
+the teacher instructs him to not blame others,
+and continues to the principal's office.
+Kai is instructed to stay behind and clean up the mess.
+the sun has begun to set by the time Kai finishes the cleanup.
+exhausted by the day's events,
+Kai moved through the town,
+his feet dragging with exhaustion.
+deciding to take a shortcut,
+Kai turns down an alleyway he has used many times before.
+He follows the alleyway like he usually does,
+and soon stops dead in his tracks when the sound of scuffling feet echoed down the dimly lit alley.
+Shortly after,
+a man's cry for help echoes before a body flies across Kai's vision,
+hitting the wall beside him.
+the man's body was mangled beyond recognition.
+the sight of the blood causes kai's body to freeze from fear.
+caught up by the sight of the man's corpse,
+he does not realize the appearance of three heavily scarred,
+middle aged men behind him.
+His body feels their intent to kill,
+the savage thirst for blood before he notices them.
+Hearing the heavy breathing of the men,
+Kai darts down the route he came from.
+Followed by menacing squeels of excitement,
+he makes for his school.
+there he takes a wrong turn,
+and ends up cornered by the three men.
+They approach him steadily,
+and his breath speeds up in sync with his rapid heartbeat.
+He was going to die.
+His body drenched in switch.
+He knew this was going to be his last breath.
+He closed his eyes in anticipation for the excrutiating pain of murder,
+and embraced himself for death.
+the men began their relentless attack.
+Punching him,
+kicking him,
+over and over until his breathing was constrained,
+and he barely conscious.
+After what felt like hours or years,
+he heard it.
+the sound of a knife or sword being unsheathed.
+He embraced;
+somewhere deep inside he prayed for mercy.
+There wasn't any,
+and when the sharp pain rang through his body,
+he was engulfed in the deepest blackness.
 
-    There is at least one survivor who returns to their boss to report the incident.
-    The Magic Regulation Authority notices the sudden surge in unauthorised magic coming from the school and instructs their nearest representative to investigate with no clue as to who the person responsible is.
-    *************************************************************************************************
-    --chapter 1 end--
+The Magic Regulation Authority is notified of a surge of power in the location of kai's school.
+in response to it,
+the council instructs a representative who's nearby to investigate the source of this abnormality.
+*************************************************************************************************.
+--chapter 1 end--
 
 CHAPTER 2:
-    Kai wakes up in the medical wing at the school.
-    When he returns to class,
-    a new girl has transferred.
+	CHARACTERS:
+		Kai Trevnets
+		Lily Athena
+
+	GOAL:
+		uncover the assasination plot.
+
+Kai wakes up in the medical wing at his school.
+A new student has transferred into Kai's class.
+Her name is Lily Athena.
+She's cute,
+and small.
+
+There was a survivor from the previous incident.
+Using the last of his breath,
+he returns to his boss and notifies him of kai.
+the boss decides to entice kai into helping them with their plans.
