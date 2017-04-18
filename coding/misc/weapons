@@ -1,0 +1,28 @@
+Types:
+	Melee:
+		fist
+		fan
+		swords
+		knives and daggers
+		picks and pickaxes
+		axes
+		clubs
+		pole
+	
+	Ranged:
+		Thrown
+		Bows
+		Sling
+		Blowgun
+		
+	Flexible:
+		Ropes and whips
+		Sectional and composite
+		chain weapons
+
+	Shields
+
+Attributes:
+	Damage
+	Durability
+	Weight

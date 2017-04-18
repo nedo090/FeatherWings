@@ -1,0 +1,15 @@
+Types:
+	Heavy
+	Medium
+	Light
+		Shield
+		helmet
+		Torso
+		arms
+		legs
+		shoulders
+
+Attributes:
+	Defense
+	Durability
+	Weight
