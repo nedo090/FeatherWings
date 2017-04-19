@@ -1,0 +1,24 @@
+Definition:
+	A class is a data-type used to hold various member functions and variables. Think of it like a blueprint for an object. Classes are more commonly used in Object Oriented Programming (OOP).
+
+Syntax:
+	class ClassName {
+
+	};			<-- NB: Remeber to put the semi-colon like here.
+
+Examples:
+	class Student {
+		public:
+			std::string get_name();
+			int get_age();
+			char get_sex();
+
+			void set_name( std::string new_name );
+			void set_age( int new_age );
+			void set_sex( char new_sex );
+
+		private:
+			std::string name;
+			int age;
+			char sex;
+	};

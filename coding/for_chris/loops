@@ -1,0 +1,21 @@
+Definition:
+	Loops allow you to run the same code multiple times. Useful for repeating commands, or iterating through lists.
+
+Types:
+	for:
+		used when the number of iterations is known
+	while:
+		used when the number of iterations is unknown
+	do-while:
+		similar to the while. The code executes at least once.
+
+Syntax:
+	for ( var declaration; condition; increment )
+
+	while ( condition ) {
+
+	}
+
+	do {
+
+	} while ( condition );

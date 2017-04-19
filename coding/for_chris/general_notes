@@ -1,0 +1,40 @@
+C++ is a fun language to learn. It is derived from C, which is derived from B, which is derived from BCPL.
+C++ essentially stands for C with classes, or C with extras.
+C code can work with C++, and C++ code won't necessarily work with C.
+Almost all programs and languages are built using either C or C++.
+
+A few guidelines which I follow:
+
+I usually declare my functions, and then define them. eg:
+	int function();
+
+	int main() {
+		return 0;
+	}
+
+	int function() {
+		//function definition
+	}
+
+Variable and function names can be on of two types: Camel Case, eg: thisIsAVariable; thisIsAFunction(). Or with underscores. eg: this_is_a_variable; this_is_a_function()
+
+either is accepted. For assignments and exams, use what the instructor prefers. When doing your own code, you can use what you prefer.
+
+class names are almost always camel case. eg: class ThisIsAClass{};
+
+You will probably have been told to break problems down into steps on paper before coding. For your course, follow your instructor's instructions.
+for my own projects, I tend to use function definitions as my problem steps.
+
+Scope:
+	scope means where the variable is available. Global means the variable is available to the whole program, local means its available only to the class or function where it was declared.
+	As a general rule of thumb, avoid Global Variables, unless its constants.
+
+Comment your code only when what you are doing is unusual. This is so that other programmers can see why did something the way you did it.
+Otherwise, your code should be self documenting. This means that variable, function and class names should describe the function of their corresponding types. functions usually have a verb in their names. eg:
+	//this isn't self documenting code:
+	int num;
+	int Test();
+
+	//this is self documenting code:
+	int average;
+	int calculate_average();

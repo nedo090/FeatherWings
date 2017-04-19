@@ -1,0 +1,58 @@
+Definition:
+	In it's basic form, conditionals are how you program software to make decisions. If a condition is true, do this. If false, do that. There two main types: switch and if-else. you'll probably use if-else more than switch. both have their uses.
+
+Syntax:
+	switch( var ) {
+		case 1:
+			do something...
+			break;
+		case 2:
+			do something else...
+			break;
+		...
+	}
+
+	if ( condition ) {
+		do something
+	}
+	else {
+		do something else
+	}
+
+	if ( 1st condition ) {
+		do something
+	} else if ( 2nd condition ) {
+		do something else
+	}
+
+Types:
+	Switch
+		To test a condition against several cases.
+	if-else
+		The more basic conditional. you also get if-elseif.
+
+Examples:
+	switch('c') {
+		case 'a':
+			std::cout << "the letter a" << std::endl;
+			break;
+		case 'c':
+			std::cout << "the letter c" << std::endl;
+			break;
+	}
+
+if ( 1 >= 0 ) {
+	std::cout << "one is greater than or equal to zero";
+}
+else {
+	std::cout << "one is less than zero";
+}
+
+if ( 1 >= 0 ) {
+	std::cout << "one is greater than or equal to zero";
+} else if ( 1 < 0 ) {
+	std::cout << "one is less than zero";
+}
+else {
+	std::cout << "i will eat your brainz!!!";
+}
