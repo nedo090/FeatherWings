@@ -1,0 +1,31 @@
+parent class:
+	none
+
+sub-class:
+	item
+
+description:
+	base blueprint for all items. contains attributes common among all items.
+
+inherited attributes:
+	none
+
+unique attributes:
+	string name
+	string description
+	int weight
+	int current_durability
+	int max_durability
+	string rarity
+	float decay_rate
+	int sell_value
+	int buy_value
+	string type
+
+inherited methods:
+	none
+
+unique methods:
+	getters and setters
+	repair
+	destroy

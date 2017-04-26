@@ -1,0 +1,31 @@
+Parent Class:
+	Item
+
+Sub-class:
+	none
+
+Description:
+	base blueprint for all armour. Inherits attributes from Item class, and adds it's own attributes common among armour.
+
+Inherited Attributes:
+	string name
+	string description
+	int weight
+	int current_durability
+	int max_durability
+	string rarity
+	float decay_rate
+	int sell_value
+	int buy_value
+	string type
+
+Unique Attributes:
+	Defense
+
+inherited methods:
+	getters and setters
+	repair
+	destroy
+
+unique methods:
+	none

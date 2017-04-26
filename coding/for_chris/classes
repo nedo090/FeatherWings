@@ -1,10 +1,10 @@
 Definition:
-	A class is a data-type used to hold various member functions and variables. Think of it like a blueprint for an object. Classes are more commonly used in Object Oriented Programming (OOP).
+	A class is a data-type used as a blueprint for an object.
 
 Syntax:
 	class ClassName {
 
-	};			<-- NB: Remeber to put the semi-colon like here.
+	};			<-- NB: Remember to put the semi-colon here.
 
 Examples:
 	class Student {

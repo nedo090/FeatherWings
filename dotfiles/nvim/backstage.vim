@@ -37,9 +37,10 @@ let g:neomake_cpp_gcc_maker = {
 if has("autocmd")
         augroup setup
                 au!
-                autocmd! filetype cpp,tex,vim :call Programming()
+                autocmd! filetype cpp,tex,vim,sh :call Programming()
                 autocmd! tabnew,tabclosed,bufread,bufdelete,bufadd,bufnewfile *
                                         \ :call ChangeTabBindings()
                 autocmd! bufwritepost * :Neomake
+                au!      vimresized * :wincmd =
         augroup END
 endif

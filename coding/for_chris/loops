@@ -1,5 +1,5 @@
 Definition:
-	Loops allow you to run the same code multiple times. Useful for repeating commands, or iterating through lists.
+	Loops are used to run code multiple times.
 
 Types:
 	for:
@@ -7,7 +7,7 @@ Types:
 	while:
 		used when the number of iterations is unknown
 	do-while:
-		similar to the while. The code executes at least once.
+		similar to the while, except code executes at least once.
 
 Syntax:
 	for ( var declaration; condition; increment )

@@ -1,5 +1,5 @@
 Definition:
-	These are a little different to functions, although their application is different. Whereas functions are free-standing and often initiated globally, methods are members of a class.
+	Methods are the same as functions, except that they are declared as class members.
 
 Syntax:
 	class ClassName {

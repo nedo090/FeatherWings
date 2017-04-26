@@ -1,24 +1,25 @@
 Definition:
-	Comments are snippets of information used to guide fellow programmers. They are excluded during compile-time and therefore won't show up in the end program.
+	Comments make code easier to read, and help guide other programmers through your thought processes.
 
 Syntax
 	// comment
 
 	/*  this is
-	 *  a mult-line
-	 *  comment
-	 */ 
+	*  a mult-line
+	*  comment
+	*/
 
 Examples:
+
 class Comment {
 public:
 	method 1; // this is a comment example.
 	...
 private:
 	/* this is a
-	 * multiline
-	 * comment
-	 */
+	* multiline
+	* comment example
+	*/
 
 	variable 1;
 	...

@@ -1,15 +1,15 @@
 Definition:
-	Variables are slots in memory used to store a value of a specified data type and declared using a name of your choice. Think of it as a container that holds something.
-	Variable names can only contain letters or underscores( _ ), and number if it isn't the first character of the name.
-
-	Depending on your programming teacher, there are two generally accepted conventions:
-	thisNameOr
-	this_name_or
-	this_1s_name
-	1_day
+	Variables are containers which store a single value inside memory.
 
 Syntax:
 	Data_type name = value;
+
+Naming Conventions:
+	int numOne;
+	int num_one
+	const int NUM_ONE
+	private int _numOne
+	private int _num_one
 
 Common Types:
 	integers:	int
@@ -24,5 +24,3 @@ Examples:
 	char c = 'c';
 	double = 5.25;
 	float = 5.25f;
-
-There are many types of variables, and you can even create your own. For now, these will be the basic ones you'll learn.

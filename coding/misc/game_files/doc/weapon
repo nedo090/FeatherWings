@@ -1,0 +1,31 @@
+Parent Class:
+	Item
+
+Sub-class:
+	none
+
+Description:
+	base blueprint for all weapons. Inherits attributes from Item class, and adds it's own attributes common among weapons.
+
+Inherited Attributes:
+	string name
+	string description
+	int weight
+	int current_durability
+	int max_durability
+	string rarity
+	float decay_rate
+	int sell_value
+	int buy_value
+	string type
+
+Unique Attributes:
+	Damage
+
+inherited methods:
+	getters and setters
+	repair
+	destroy
+
+unique methods:
+	none

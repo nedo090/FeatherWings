@@ -1,14 +1,14 @@
 Definition:
-	Groups of code which do a single function. Although you can write functions to do multiple things, it is generally frowned upon to define function with multiple uses. Functions are stand-alone in C++.
+	A function is a group of code that should do only one task.
 
 Syntax:
-	Data_type function_name( arguments ) {
-		return value;
-	}
+	function definition:
+		Data_type function_name( arguments ) {
+			return value;
+		}
 
-	you can also declare the function with defining it:
-
-	Data_type function_name( arguments );
+	function declaration:
+		Data_type function_name( arguments );
 
 Examples:
 	int get_number( int arg1, char arg2 );
